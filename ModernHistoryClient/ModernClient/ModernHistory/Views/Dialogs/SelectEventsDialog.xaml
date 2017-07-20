@@ -1,0 +1,36 @@
+﻿<mui:ModernDialog x:Class="ModernHistory.Views.Dialogs.SelectEventsDialog"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                  xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+                  mc:Ignorable="d" 
+                  d:DesignHeight="300" d:DesignWidth="300"
+                  Title="查询结果"
+                  DataContext="{Binding Source={StaticResource Locator}, Path=MapPageViewModelInstance}">
+    <Grid>
+        <DockPanel>
+            <DataGrid Name="DG1" ItemsSource="{Binding SelectHistoryEvents}"
+                      AutoGenerateColumns="False"  IsReadOnly="True" Width="1200">
+                <DataGrid.Columns>
+                    <mui:DataGridTextColumn Header="编号"  Binding="{Binding HistoryEventId}"/>
+                    <mui:DataGridTextColumn Header="标题"  Binding="{Binding Title}"/>
+                    <mui:DataGridTextColumn Header="详细信息"  Binding="{Binding Detail}">
+                        <mui:DataGridTextColumn.MaxWidth>300</mui:DataGridTextColumn.MaxWidth>
+                    </mui:DataGridTextColumn>
+                    <mui:DataGridTextColumn Header="发生日期"  Binding="{Binding OccurDate}"  />
+                    <mui:DataGridTextColumn Header="省份"  Binding="{Binding Province}"/>
+                    <mui:DataGridTextColumn Header="地点" Binding="{Binding Place}" />
+                    <mui:DataGridTextColumn Header="经度" Binding="{Binding OccurX}" />
+                    <mui:DataGridTextColumn Header="纬度" Binding="{Binding OccurY}" />
+                    <mui:DataGridTextColumn Header="事件类型" Binding="{Binding EventType.HistoryEventTypeName}" />
+
+                    <!--<mui:DataGridCheckBoxColumn Header="Member" Binding="{Binding IsMember}" />
+                    <mui:DataGridComboBoxColumn Header="Order Status" SelectedItemBinding="{Binding Status}" ItemsSource="{Binding Source={StaticResource myEnum}}" />
+                    -->
+                </DataGrid.Columns>
+            </DataGrid>
+        </DockPanel>
+    </Grid>
+
+</mui:ModernDialog>

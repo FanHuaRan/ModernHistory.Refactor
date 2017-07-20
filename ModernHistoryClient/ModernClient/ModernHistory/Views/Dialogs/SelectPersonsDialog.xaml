@@ -1,0 +1,35 @@
+﻿<mui:ModernDialog x:Class="ModernHistory.Views.Event.SelectPersonsDialog"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                  xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+                  mc:Ignorable="d" 
+                 d:DesignHeight="500" d:DesignWidth="1400"
+                  Title="查询结果">
+    <!--="{Binding Source={StaticResource Locator}, Path=MapPageViewModelInstance}">-->
+    <Grid>
+        <DockPanel>
+            <DataGrid Name="DG1"  ItemsSource="{Binding Source={StaticResource Locator}, Path=MapPageViewModelInstance.SelectFamousPersons}" 
+                      AutoGenerateColumns="False" IsReadOnly="True"  Width="1200">
+                <DataGrid.Columns>
+                    <mui:DataGridTextColumn Header="编号"  Binding="{Binding FamousPersonId}"/>
+                    <mui:DataGridTextColumn Header="姓名"  Binding="{Binding PersonName}"/>
+                    <mui:DataGridTextColumn Header="性别"  Binding="{Binding Gender, Converter={StaticResource genderCoverter}}"/>
+                    <mui:DataGridTextColumn Header="省份"  Binding="{Binding Province}"/>
+                    <mui:DataGridTextColumn Header="民族"  Binding="{Binding Nation}"/>
+                    <mui:DataGridTextColumn Header="出生日期" Binding="{Binding BornDate}" />
+                    <mui:DataGridTextColumn Header="出生地" Binding="{Binding BornPlace}" />
+                    <mui:DataGridTextColumn Header="出生地经度" Binding="{Binding BornX}" />
+                    <mui:DataGridTextColumn Header="出生地纬度" Binding="{Binding BornY}" />
+                    <mui:DataGridTextColumn Header="死亡日期" Binding="{Binding DeadDate}" />
+                    <mui:DataGridTextColumn Header="名人类型" Binding="{Binding PersonType.FamousPersonTypeName}" />
+
+                    <!--<mui:DataGridCheckBoxColumn Header="Member" Binding="{Binding IsMember}" />
+                    <mui:DataGridComboBoxColumn Header="Order Status" SelectedItemBinding="{Binding Status}" ItemsSource="{Binding Source={StaticResource myEnum}}" />
+                    -->
+                </DataGrid.Columns>
+            </DataGrid>
+        </DockPanel>
+    </Grid>
+</mui:ModernDialog>

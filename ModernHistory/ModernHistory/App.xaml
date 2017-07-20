@@ -1,0 +1,29 @@
+﻿<Application x:Class="ModernHistory.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ModernHistory"
+             xmlns:localconverter="clr-namespace:ModernHistory.Converters"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!--ViewModel资源定位器-->
+            <vm:ViewModelLocator xmlns:vm="clr-namespace:ModernHistory"
+                                   x:Key="Locator" />
+            <!--性别转换器-->
+            <localconverter:GenderConverter x:Key="genderCoverter"/>
+            <!--人员删除信息转换器-->
+            <localconverter:PersonDeleteInfoConverter x:Key="personDeleteInfoConverter" />
+            <!--事件删除信息转换器-->
+            <localconverter:EventDeleteInfoConverter x:Key="eventDeleteInfoConverter"/>
+            <!--人眼存在转换器-->
+            <localconverter:PersonExistConverter x:Key="personExistConverter"/>
+            <!--事件存在转换器-->
+            <localconverter:EventExistConverter x:Key="enventExistConverter"/>
+            <ResourceDictionary.MergedDictionaries>
+                <!--ModernUI资源-->
+                <ResourceDictionary Source="/FirstFloor.ModernUI;component/Assets/ModernUI.xaml" />
+                <ResourceDictionary Source="/FirstFloor.ModernUI;component/Assets/ModernUI.dark.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

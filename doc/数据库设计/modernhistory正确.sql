@@ -1,0 +1,252 @@
+/*
+Navicat MySQL Data Transfer
+
+Source Server         : LocalConnect
+Source Server Version : 50707
+Source Host           : localhost:3306
+Source Database       : modernhistory
+
+Target Server Type    : MYSQL
+Target Server Version : 50707
+File Encoding         : 65001
+
+Date: 2017-07-17 17:56:08
+*/
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for famousperson
+-- ----------------------------
+DROP TABLE IF EXISTS `famousperson`;
+CREATE TABLE `famousperson` (
+  `FamousPersonId` int(11) NOT NULL AUTO_INCREMENT,
+  `PersonName` varchar(20) NOT NULL,
+  `Gender` tinyint(3) unsigned NOT NULL,
+  `Province` varchar(20) NOT NULL,
+  `Nation` varchar(10) NOT NULL,
+  `BornDate` datetime NOT NULL,
+  `BornPlace` longtext NOT NULL,
+  `BornX` double NOT NULL,
+  `BornY` double NOT NULL,
+  `DeadDate` datetime NOT NULL,
+  `FamousPersonTypeId` int(11) NOT NULL,
+  PRIMARY KEY (`FamousPersonId`),
+  KEY `IX_FamousPersonTypeId` (`FamousPersonTypeId`) USING HASH,
+  CONSTRAINT `FK_FamousPerson_FamousPersonType_FamousPersonTypeId` FOREIGN KEY (`FamousPersonTypeId`) REFERENCES `famouspersontype` (`FamousPersonTypeId`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of famousperson
+-- ----------------------------
+INSERT INTO `famousperson` VALUES ('1', '曾国藩', '1', '湖南', '蒙古族', '1828-06-02 00:00:00', '湖南省xxx村', '54521', '124', '1908-06-02 00:00:00', '3');
+INSERT INTO `famousperson` VALUES ('2', '邓小平3', '1', '四川', '汉族', '1900-06-02 00:00:00', '湖南省xxx村', '54521', '124', '1998-06-02 00:00:00', '1');
+INSERT INTO `famousperson` VALUES ('3', '测试', '1', '四川', '汉族', '0001-01-01 00:00:00', '撒', '1955938.864361249', '2434057.2431254853', '0001-01-01 00:00:00', '1');
+INSERT INTO `famousperson` VALUES ('4', 'sa', '1', '四川', '汉族', '0001-01-01 00:00:00', '12sad ', '6824053.817392435', '3477224.8751044255', '0001-01-01 00:00:00', '1');
+INSERT INTO `famousperson` VALUES ('5', '刘少奇', '1', '江苏', '汉族', '0001-01-01 00:00:00', '是', '12604940.172253542', '4216135.161064114', '0001-01-01 00:00:00', '1');
+INSERT INTO `famousperson` VALUES ('6', '朱德', '1', '四川', '汉族', '0001-01-01 00:00:00', '四川南充仪陇', '11426152.584358625', '3624451.6157522565', '0001-01-01 00:00:00', '1');
+INSERT INTO `famousperson` VALUES ('7', '李鹏', '1', '四川', '汉族', '0001-01-18 00:00:00', '四川宜宾', '11916101.482750012', '3616674.6678007795', '0001-01-11 00:00:00', '3');
+INSERT INTO `famousperson` VALUES ('8', 'XX名人', '1', '四川', '汉族', '0001-01-01 00:00:00', '搜索', '12257217.684743099', '3042571.765716372', '0001-01-01 00:00:00', '5');
+INSERT INTO `famousperson` VALUES ('9', 'XXXX名人', '1', '四川', '汉族', '0001-01-01 00:00:00', '是是', '12909197.348825179', '3433759.56416562', '0001-01-01 00:00:00', '1');
+INSERT INTO `famousperson` VALUES ('10', '刘强', '1', '四川', '汉族', '0001-01-18 00:00:00', '成都', '11488531.141148876', '3575261.222985155', '0001-01-01 00:00:00', '1');
+INSERT INTO `famousperson` VALUES ('11', 'XSA SA ', '1', '四川', '汉族', '0001-01-01 00:00:00', 'SA SA ', '12337454.629101241', '3670340.6536358194', '0001-01-01 00:00:00', '4');
+INSERT INTO `famousperson` VALUES ('12', '成啊', '1', '湖南', '汉族', '0001-01-01 00:00:00', '撒as', '11705855.554064684', '3731463.14476839', '0001-01-01 00:00:00', '3');
+INSERT INTO `famousperson` VALUES ('13', '左宗棠', '1', '湖南', '汉族', '1830-01-01 00:00:00', '湖南长沙', '12533066.046798127', '3263989.4319127086', '1878-01-01 00:00:00', '2');
+INSERT INTO `famousperson` VALUES ('15', '左宗棠', '1', '湖南', '汉族', '1830-01-01 00:00:00', '湖南长沙', '12533066.046798127', '3263989.4319127086', '1878-01-01 00:00:00', '1');
+INSERT INTO `famousperson` VALUES ('16', '贺龙', '1', '湖南', '汉族', '1895-01-01 00:00:00', '湖南桑植', '12435929.849446494', '3300675.2444128552', '1974-01-01 00:00:00', '1');
+INSERT INTO `famousperson` VALUES ('17', '罗荣桓', '1', '湖南', '汉族', '1908-01-01 00:00:00', '湖南衡东', '12533556.009584416', '3071465.8320292155', '1974-01-01 00:00:00', '2');
+INSERT INTO `famousperson` VALUES ('18', '彭德怀', '1', '湖南', '汉族', '1909-01-01 00:00:00', '湖南湘潭', '12349811.274554875', '3173242.590100879', '1981-01-01 00:00:00', '2');
+INSERT INTO `famousperson` VALUES ('19', '陈毅', '1', '四川', '汉族', '1916-01-01 00:00:00', '四川乐至', '11685952.979291752', '3546720.973910893', '1986-01-01 00:00:00', '3');
+INSERT INTO `famousperson` VALUES ('20', '朱德', '1', '四川', '汉族', '1893-01-01 00:00:00', '四川仪陇', '11625154.314691199', '3412653.177666515', '1976-06-01 00:00:00', '1');
+INSERT INTO `famousperson` VALUES ('21', '刘伯承', '1', '重庆', '汉族', '1912-01-01 00:00:00', '重启开县', '11910796.255859759', '3530117.430862787', '1985-01-01 00:00:00', '1');
+INSERT INTO `famousperson` VALUES ('22', '聂荣臻', '1', '重庆', '汉族', '1919-01-01 00:00:00', '重启潼南', '11906127.17780938', '3452440.9505701144', '1988-01-01 00:00:00', '1');
+INSERT INTO `famousperson` VALUES ('23', '叶剑英', '1', '广东', '汉族', '1915-01-01 00:00:00', '广东梅县', '12670952.854871288', '2710741.0779632786', '1989-01-01 00:00:00', '3');
+INSERT INTO `famousperson` VALUES ('24', '冯友兰', '1', '河南', '汉族', '1895-01-01 00:00:00', '河南南阳', '12609110.251334812', '4003118.715467829', '1990-01-01 00:00:00', '4');
+INSERT INTO `famousperson` VALUES ('25', '林则徐', '1', '福建', '汉族', '1785-01-01 00:00:00', '福建泉州', '13241558.131539155', '3016669.778079482', '1850-01-01 00:00:00', '5');
+INSERT INTO `famousperson` VALUES ('26', '严复', '1', '福建', '汉族', '1853-01-01 00:00:00', '福建福州', '13211845.819986206', '2953849.4622246744', '1921-01-01 00:00:00', '1');
+INSERT INTO `famousperson` VALUES ('27', '梁启超', '1', '广东', '汉族', '1873-01-01 00:00:00', '广东新会', '12873141.472447684', '2656263.682652754', '1929-01-01 00:00:00', '2');
+INSERT INTO `famousperson` VALUES ('28', '张之洞', '1', '江苏', '汉族', '1875-01-01 00:00:00', '江苏苏州', '13251631.020218225', '3729802.5414222605', '1927-01-01 00:00:00', '1');
+INSERT INTO `famousperson` VALUES ('29', '阎锡山', '1', '山西', '汉族', '1910-01-01 00:00:00', '山西太原', '12457888.38947083', '4563735.656850143', '1940-01-01 00:00:00', '2');
+INSERT INTO `famousperson` VALUES ('30', '李晨辉', '1', '山西', '汉族', '1995-01-01 00:00:00', '山西芮城', '12515615.125982204', '4393951.137699041', '2080-01-01 00:00:00', '2');
+INSERT INTO `famousperson` VALUES ('31', '孙墨佛', '1', '山东', '汉族', '1900-01-01 00:00:00', '山东临沂', '13275723.596713468', '4424512.753442495', '1900-01-01 00:00:00', '34');
+INSERT INTO `famousperson` VALUES ('32', '李进强', '1', '其它', '汉族', '1995-01-01 00:00:00', '宁夏固原', '11806120.226701625', '4499002.752370907', '2080-01-01 00:00:00', '3');
+INSERT INTO `famousperson` VALUES ('33', '腾格尔', '1', '新疆', '维吾尔族', '1980-01-01 00:00:00', '新疆乌鲁木齐', '9738643.93771189', '5343902.294146756', '2017-01-01 00:00:00', '4');
+INSERT INTO `famousperson` VALUES ('34', '黄宾虹', '1', '安徽', '汉族', '1900-01-01 00:00:00', '安徽合肥', '13049231.67480168', '3889605.716298027', '1900-01-01 00:00:00', '2');
+INSERT INTO `famousperson` VALUES ('35', '马一浮', '1', '其它', '汉族', '1900-01-01 00:00:00', '甘肃兰州', '11546963.042534186', '4313392.100676184', '1900-01-01 00:00:00', '1');
+INSERT INTO `famousperson` VALUES ('36', '张学良', '1', '吉林', '汉族', '1900-01-01 00:00:00', '吉林长春', '13768130.599679336', '5072451.383626093', '1900-01-01 00:00:00', '2');
+INSERT INTO `famousperson` VALUES ('37', '傅作义', '1', '北京', '汉族', '1900-01-01 00:00:00', '北京', '12970814.492435819', '4844258.695558717', '1900-01-01 00:00:00', '1');
+INSERT INTO `famousperson` VALUES ('38', '徐生翁', '1', '其它', '汉族', '1900-01-01 00:00:00', '陕西宝鸡', '12097639.847158972', '4080756.240825951', '1900-01-01 00:00:00', '1');
+INSERT INTO `famousperson` VALUES ('39', '启功', '1', '北京', '汉族', '1900-01-01 00:00:00', '北京', '12942351.486820152', '4835275.16402122', '1900-01-01 00:00:00', '2');
+
+-- ----------------------------
+-- Table structure for famouspersontype
+-- ----------------------------
+DROP TABLE IF EXISTS `famouspersontype`;
+CREATE TABLE `famouspersontype` (
+  `FamousPersonTypeId` int(11) NOT NULL AUTO_INCREMENT,
+  `FamousPersonTypeName` longtext NOT NULL,
+  PRIMARY KEY (`FamousPersonTypeId`)
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of famouspersontype
+-- ----------------------------
+INSERT INTO `famouspersontype` VALUES ('1', ' 政治家');
+INSERT INTO `famouspersontype` VALUES ('2', '思想家');
+INSERT INTO `famouspersontype` VALUES ('3', '军事家');
+INSERT INTO `famouspersontype` VALUES ('4', '文学家');
+INSERT INTO `famouspersontype` VALUES ('5', '商人');
+INSERT INTO `famouspersontype` VALUES ('6', '明星');
+INSERT INTO `famouspersontype` VALUES ('7', '其它');
+INSERT INTO `famouspersontype` VALUES ('8', ' 政治家');
+INSERT INTO `famouspersontype` VALUES ('9', '军事家');
+INSERT INTO `famouspersontype` VALUES ('10', ' 政治家');
+INSERT INTO `famouspersontype` VALUES ('11', '文学家');
+INSERT INTO `famouspersontype` VALUES ('12', ' 政治家');
+INSERT INTO `famouspersontype` VALUES ('13', '其它');
+INSERT INTO `famouspersontype` VALUES ('14', ' 政治家');
+INSERT INTO `famouspersontype` VALUES ('15', ' 政治家');
+INSERT INTO `famouspersontype` VALUES ('16', '军事家');
+INSERT INTO `famouspersontype` VALUES ('17', '军事家');
+INSERT INTO `famouspersontype` VALUES ('18', '军事家');
+INSERT INTO `famouspersontype` VALUES ('19', '军事家');
+INSERT INTO `famouspersontype` VALUES ('20', '军事家');
+INSERT INTO `famouspersontype` VALUES ('21', '军事家');
+INSERT INTO `famouspersontype` VALUES ('22', '思想家');
+INSERT INTO `famouspersontype` VALUES ('23', '军事家');
+INSERT INTO `famouspersontype` VALUES ('24', '军事家');
+INSERT INTO `famouspersontype` VALUES ('25', '军事家');
+INSERT INTO `famouspersontype` VALUES ('26', '军事家');
+INSERT INTO `famouspersontype` VALUES ('27', '文学家');
+INSERT INTO `famouspersontype` VALUES ('28', '军事家');
+INSERT INTO `famouspersontype` VALUES ('29', ' 政治家');
+INSERT INTO `famouspersontype` VALUES ('30', ' 政治家');
+INSERT INTO `famouspersontype` VALUES ('31', '商人');
+INSERT INTO `famouspersontype` VALUES ('32', '军事家');
+INSERT INTO `famouspersontype` VALUES ('33', '其它');
+INSERT INTO `famouspersontype` VALUES ('34', '思想家');
+INSERT INTO `famouspersontype` VALUES ('35', '军事家');
+INSERT INTO `famouspersontype` VALUES ('36', '明星');
+INSERT INTO `famouspersontype` VALUES ('37', '文学家');
+INSERT INTO `famouspersontype` VALUES ('38', '思想家');
+INSERT INTO `famouspersontype` VALUES ('39', '军事家');
+INSERT INTO `famouspersontype` VALUES ('40', '军事家');
+INSERT INTO `famouspersontype` VALUES ('41', '思想家');
+INSERT INTO `famouspersontype` VALUES ('42', '文学家');
+
+-- ----------------------------
+-- Table structure for historyevent
+-- ----------------------------
+DROP TABLE IF EXISTS `historyevent`;
+CREATE TABLE `historyevent` (
+  `HistoryEventId` int(11) NOT NULL AUTO_INCREMENT,
+  `Title` varchar(30) NOT NULL,
+  `Detail` varchar(1030) NOT NULL,
+  `OccurDate` datetime NOT NULL,
+  `Province` varchar(20) NOT NULL,
+  `Place` longtext NOT NULL,
+  `OccurX` double NOT NULL,
+  `OccurY` double NOT NULL,
+  `HistoryEventTypeId` int(11) NOT NULL,
+  PRIMARY KEY (`HistoryEventId`),
+  KEY `IX_HistoryEventTypeId` (`HistoryEventTypeId`) USING HASH,
+  CONSTRAINT `FK_HistoryEvent_HistoryEventType_HistoryEventTypeId` FOREIGN KEY (`HistoryEventTypeId`) REFERENCES `historyeventtype` (`HistoryEventTypeId`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of historyevent
+-- ----------------------------
+INSERT INTO `historyevent` VALUES ('1', '事件标题哈', 'xxxx事件', '2017-07-14 00:00:00', '四川', 'XX地方', '45', '45', '2');
+INSERT INTO `historyevent` VALUES ('3', '事件标题', '是   是 ', '0001-01-01 00:00:00', '四川', '成都', '11780560.821004491', '3398685.137491063', '1');
+INSERT INTO `historyevent` VALUES ('4', 'XX事件', '是是是', '0001-01-01 00:00:00', '四川', 'xx地点', '11447782.813727165', '3425850.689105539', '1');
+INSERT INTO `historyevent` VALUES ('5', '再来一个事件', '是撒', '0001-01-18 00:00:00', '湖南', '是是', '12059007.725052865', '3120238.2334426884', '1');
+INSERT INTO `historyevent` VALUES ('6', '南昌起义', '八一南昌起义常简称南昌起义或者八一起义，指在1927年8月1日中共联合国民党左派，打响了武装反抗国民党反动派的第一枪，揭开了中国共产党独立领导武装斗争和创建革命军队的序幕。八一南昌起义常简称南昌起义或者八一起义，指在1927年8月1日中共联合国民党左派，打响了武装反抗国民党反动派的第一枪，揭开了中国共产党独立领导武装斗争和创建革命军队的序幕。', '1927-08-01 00:00:00', '江西', '江西南昌', '12903960.086078834', '3332181.131048468', '2');
+INSERT INTO `historyevent` VALUES ('7', '新中国成立', '毛泽东主席在天安门城楼上向全世界庄严宣告：\"中华人民共和国中央人民政府今天成立了！”向世界宣告中华人民共和国成立。', '1949-10-01 00:00:00', '北京', '北京', '12958977.35414742', '4853045.520541315', '1');
+INSERT INTO `historyevent` VALUES ('8', '辽沈战役', '辽沈战役是中国近代史解放战争的“三大战役”之一，1948年9月12日开始，同年11月2日结束，共历时52天。中国共产党称之为辽沈战役，中国国民党称之为辽西会战，又作”辽沈会战“。', '1948-09-12 00:00:00', '辽宁', '辽宁沈阳', '13484425.159701673', '5030530.299768073', '2');
+INSERT INTO `historyevent` VALUES ('9', '淮海战役', '淮海战役，国民党称“徐蚌会战”，是解放战争时期中国人民解放军华东野战军、中原野战军在以徐州为中心，东起海州（连云港），西至商丘，北起临城（今枣庄市薛城），南达淮河的广大地区，对国民党军进行的战略性进攻战役。', '1948-11-06 00:00:00', '浙江', '江淮地区', '13044634.004889667', '4064845.1031685793', '2');
+INSERT INTO `historyevent` VALUES ('10', '渡江战役', '1949年4月20日晚和21日，人民解放军第二、三野战军遵照中央军委的命令和总前委的《京沪杭战役实施纲要》，先后发起渡江。在炮兵、工兵的支持配合下，在西起湖口、东至靖江的千里战线上强渡长江，迅速突破国民党军的江防，占领贵池、铜陵、芜湖和常州、江阴、镇江等城，彻底摧毁了国民党军的长江防线。', '1949-04-20 00:00:00', '江苏', '长江中下游', '13164642.004851975', '3751467.3264040938', '2');
+INSERT INTO `historyevent` VALUES ('11', '西安事变', '1936年12月25日，在中共中央和周恩来主导下，以蒋介石接受“停止内战，联共抗日”的主张而和平解决。西安事变的和平解决为抗日民族统一战线的建立准备了必要的前提，成为由国内战争走向抗日民族战争的转折点', '1936-12-12 00:00:00', '其它', '陕西西安', '12124871.620034833', '4064981.9538996946', '3');
+INSERT INTO `historyevent` VALUES ('12', '虎门销烟', '虎门销烟（1839年6月）指中国清朝政府委任钦差大臣林则徐在广东虎门集中销毁鸦片的历史事件。此事后来成为第一次鸦片战争的导火线，《南京条约》也是那次战争时清政府签订的。', '1838-06-03 00:00:00', '广东', '广东虎门', '12604070.262066104', '2566717.6917017167', '1');
+
+-- ----------------------------
+-- Table structure for historyeventtype
+-- ----------------------------
+DROP TABLE IF EXISTS `historyeventtype`;
+CREATE TABLE `historyeventtype` (
+  `HistoryEventTypeId` int(11) NOT NULL AUTO_INCREMENT,
+  `HistoryEventTypeName` longtext NOT NULL,
+  PRIMARY KEY (`HistoryEventTypeId`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of historyeventtype
+-- ----------------------------
+INSERT INTO `historyeventtype` VALUES ('1', '政治');
+INSERT INTO `historyeventtype` VALUES ('2', '军事');
+INSERT INTO `historyeventtype` VALUES ('3', '经济');
+INSERT INTO `historyeventtype` VALUES ('4', '文学');
+INSERT INTO `historyeventtype` VALUES ('5', '军事');
+INSERT INTO `historyeventtype` VALUES ('6', '军事');
+INSERT INTO `historyeventtype` VALUES ('7', '经济');
+INSERT INTO `historyeventtype` VALUES ('8', '政治');
+INSERT INTO `historyeventtype` VALUES ('9', '军事');
+INSERT INTO `historyeventtype` VALUES ('10', '军事');
+INSERT INTO `historyeventtype` VALUES ('11', '军事');
+INSERT INTO `historyeventtype` VALUES ('12', '政治');
+INSERT INTO `historyeventtype` VALUES ('13', '军事');
+INSERT INTO `historyeventtype` VALUES ('14', '军事');
+INSERT INTO `historyeventtype` VALUES ('15', '军事');
+INSERT INTO `historyeventtype` VALUES ('16', '军事');
+INSERT INTO `historyeventtype` VALUES ('17', '军事');
+INSERT INTO `historyeventtype` VALUES ('18', '军事');
+INSERT INTO `historyeventtype` VALUES ('19', '军事');
+INSERT INTO `historyeventtype` VALUES ('20', '政治');
+
+-- ----------------------------
+-- Table structure for mhuser
+-- ----------------------------
+DROP TABLE IF EXISTS `mhuser`;
+CREATE TABLE `mhuser` (
+  `MhUserId` int(11) NOT NULL AUTO_INCREMENT,
+  `UserName` longtext NOT NULL,
+  `Password` longtext NOT NULL,
+  `RealName` longtext NOT NULL,
+  `Email` longtext,
+  PRIMARY KEY (`MhUserId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of mhuser
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for personeventrelation
+-- ----------------------------
+DROP TABLE IF EXISTS `personeventrelation`;
+CREATE TABLE `personeventrelation` (
+  `PersonEventRelationId` int(11) NOT NULL AUTO_INCREMENT,
+  `FamousPersonId` int(11) NOT NULL,
+  `HistoryEventId` int(11) NOT NULL,
+  PRIMARY KEY (`PersonEventRelationId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of personeventrelation
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for __migrationhistory
+-- ----------------------------
+DROP TABLE IF EXISTS `__migrationhistory`;
+CREATE TABLE `__migrationhistory` (
+  `MigrationId` varchar(150) NOT NULL,
+  `ContextKey` varchar(300) NOT NULL,
+  `Model` longblob NOT NULL,
+  `ProductVersion` varchar(32) NOT NULL,
+  PRIMARY KEY (`MigrationId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of __migrationhistory
+-- ----------------------------
+INSERT INTO `__migrationhistory` VALUES ('201707140111194_InitialCreate', 'Fhr.ModernHistory.Repositorys.Contexts.ModernHisContext', 0x1F8B0800000000000400E55CDB6EE336107D2FD07F10F458A0762E28DA2EEC5D647369833617C4D9C5EED382916887A844A92295C6DFD6877E527FA1D49DE245A26E8ED37D7368F2CC90339C2139C7F9F7EF7F16EF9E7DCF7A821141015EDA87B303DB82D8095C84374B3BA6EBEF7FB2DFBDFDF69BC5B9EB3F5B1F8B7EC7493F361293A5FD4869F8663E27CE23F40199F9C8890212ACE9CC09FC397083F9D1C1C1CFF3C3C339641036C3B2ACC55D8C29F261FA07FBF334C00E0C690CBCABC0851EC9DBD937AB14D5BA063E242170E0D2BE788C6649AF08FF8A080DA2EDEC0E860141C947326348143E53625B271E024CBB15F4D6B605300E28A04CF7371F085CD128C09B55C81A8077BF0D21EBB7061E81F99CDE54DD4DA77770944C6F5E0DECB53C76397136F573B644749BA8974E9FCD1CF8414C6E990D183CD793F5FD0D6E6B0DACE9360A4218D1ED1D5C2BC65FBAB635AF63CC45901242333E516D695F627A7C645BD7B1E781070F962BC92DF98AD906FE02318C0085EE2DA094598F8D74613A454913416E2631F95CC8640664FE695B57E0F9778837F471691F3187BC40CFD02D1A72353E60C4BC998DA1510C156A368B664A334F2BC4BEDFD2EE10ECCF27C4DC7BE7BA5FE77EA8157B3889D8F74184CF002DE79B7CBE477E3FA05B0F34AE1CFB38D51C3E9513086236B217C6E781186710B8A3AC25BF7513A8F6ED2BE05D8327B4491D4AB939132CDBBA835EDA853CA2308BBC335EF017BEEF4514F8778127E8C675F9B20AE228357ED0DCEF1E441B48EB1A2FE655F4348EA9A96203E36AB1B84362AB9981C68BAFA2EC96483BCA9E3336509EE4CF9FD85CFA18871FDFC730E2F85D19E51E51AFC90AC79304EF334801F21A73C634826F1C278E4609752F966F5F2857A52B373459A52043B315BF55C64D3225A432C7F072BF705DAB14A3EE2165184DB74109465C94A131AC6F82E96E9CF16299287BAF12CCD523BB11467DCC928DEC638C6AE4AE4C90C8DBC5B22BC22220E4AF2072772FF90E02EF65E67CEE37675153B1BD1C3A3BC8A59BAD08967DBC5B01D3C7D535302F71B6ED9C8F061D054D6C774248E0A074A20A7DF9FB525DB173EC5A8697A7CC05C5AB18F3C6D8A328F490C3D45ADADF49736F1751A4458D882C07D7C51CDAA2DFDDE033E8410AAD13277B6E3B05C401AE6C0BB6826EBD85B92A8C122F00DE293B0FD008204C65BF6667411402CF6C32C2F09ED7BD44DD52B0F8CD190C9347254CCD2C389E46A5606161DBD67131E7DCB4D97B3527319D67B51DCB2AC7AADD023BF86ECB894E23613F5DB7792E267ED27E8EECE4B9CDE61B4FA1D11D370BC649A9808D805171282B8A0A790D4172DB64D00A52C5A623B655057865B8953C540F9616245A00330F6D01E557570558DF541DC0741ACA7BA805343B07ABA0F253791B80EAAC2383297B09C89CABA8CD527BBDE47AB73C748ADE6C9EBACBB94ABE266D11F364AD01CD2D2A06AEFAA2182C98EE2A2EAF9749AAE8922CB889097EDFB05A2DE94183D975B18AD35F1970AAF2E63CAB6F1675D0B9A610BAB80261C82E115C61346FB1565955F4F4FB55F78AA39F61CC1DA2283C96DA9692D802800D14BE65A299A6172822F40C50F00092B3EFA9EB4BDD4CC36B214E1565654B163BBD18553C2F98D68967FAA22ABFCC176CE67E92F9D2EB886613C9C3D30236F040D4722B390DBCD8C72655DA2654BE4ECA23F2EDE66845E993472ADA3AE854BEC6D6342A5BCD918A72268F73AD8CE54D28557592C7A95ABB21E54FBE2254DEDC0DEB938CF3A92BC66719E373178CAADEC8C354ADE648AA2B89CECB7527BF24200AFB4F3A1B4A11403A7AD7C34AE7A09305FB89038F2AF5750C3E6A8869CD638A2E8724758FBD7180FA096202E3EBAB9A46866F1EAE338BF87EC51BA4B94CDA849A172A79B0BCA94BDCC9CA8EF5A893B599A37035441E886B7E89BCA5C8119DF34351E393A6D5294314453E09A5538E50DDD9759EB477915D3EC64FBCB97B46F6768869CD638A2E4776758FBD7180E2C56102B3AB0A8946C6D60DD419A1AA1EF20BAFAB4636215555411EA96AED10E5CA2A5F2DD095ADE64855D58E47AA5ACD91F22A1C0F9337ED8D3BB6D6EAC6714D0331067E6A84D27C3995EA80F23DB5A5E2D824639A6BF5B063D3A48E25BD2C895D4AE9E50B93F092B4C85F75DA79F7D2334FD6C5B6D243919B3EF16C577F7AB3E4FB59FAF1D443E9D372D1E30A60B48684DE077F40BCB47F98FD28D0F47B50E6E784B8DE6BE4CDA364655AABDB5DC91612551E3F81C879049144801BC4848F29C2DB740603D97963A95727BB2B510FBBA38A5C76977DA62929F136820ECA7E0BD30FB6C616F402A662F2263A88A8EE8E4054EF892112D5475A283D2BBADDF7FE4714F049424513EBDBD01F5F39897B9265ADF1B69571E8B8FB3EA8D3B235D1AD07AEC4BA1E69DF4E15E5C7099A75C674CF8857674CF704D19372478C6FFBCF409E642336918EC78E6FFBC0219E641145DA70EF3D27B2807B0389A4DEDE40358EAE0AE5EBA0E04E7EB6E812D33A65EE3D60DC66E4969722C0AA751AC0F91DCCA8D5BC76EF9443FBD5306625E7DB298555ADD300D2EE604EACB1F34D48837D7DAC5799BDA579B8563DA6B5B15EB32742763C7E08986764C17A102FD68816DB26B53379B6953BAB9238885D6B44AE6D93DA8182DBC0C05549999E9DAB92AAECB857345EDE746A868E2977578BF27A48BAD262B4F9664356D1715F2621E1CA25111675B97F58C43200419B0A22F9F745183AB5785BF6B9C4EBA0480182464517F16207297059303E89285A0387B2AF1D4848FA1BC28FC08BD3BBCB03742FF14D4CC398B22943FFC1ABFD142E491F4DF253A6715DE7C54D98FEAE7A8C29303551F2947483DFC7C8734BBD2F1407750D449297F21B49624B9ADC4C36DB12E93AC08640F9F295E9F41EFA210B1E90DCE01578827ADDDAD7B0BE628B33043611F0498E518D677F32F773FDE7B7FF01D04FD9CA724B0000, '6.0.0-20911');

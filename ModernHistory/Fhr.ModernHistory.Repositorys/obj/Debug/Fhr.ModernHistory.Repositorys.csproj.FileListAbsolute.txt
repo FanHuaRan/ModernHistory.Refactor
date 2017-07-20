@@ -1,0 +1,16 @@
+E:\Programing\c#\ModernHistory\ModernHistory\Fhr.ModernHistory.Repositorys\obj\Debug\Fhr.ModernHistory.Repositorys.csprojResolveAssemblyReference.cache
+E:\Programing\c#\ModernHistory\ModernHistory\Fhr.ModernHistory.Repositorys\bin\Debug\Fhr.ModernHistory.Repositorys.dll.config
+E:\Programing\c#\ModernHistory\ModernHistory\Fhr.ModernHistory.Repositorys\bin\Debug\Fhr.ModernHistory.Repositorys.dll
+E:\Programing\c#\ModernHistory\ModernHistory\Fhr.ModernHistory.Repositorys\bin\Debug\Fhr.ModernHistory.Repositorys.pdb
+E:\Programing\c#\ModernHistory\ModernHistory\Fhr.ModernHistory.Repositorys\bin\Debug\EntityFramework.dll
+E:\Programing\c#\ModernHistory\ModernHistory\Fhr.ModernHistory.Repositorys\bin\Debug\EntityFramework.SqlServer.dll
+E:\Programing\c#\ModernHistory\ModernHistory\Fhr.ModernHistory.Repositorys\bin\Debug\Fhr.ModernHistory.Models.dll
+E:\Programing\c#\ModernHistory\ModernHistory\Fhr.ModernHistory.Repositorys\bin\Debug\Fhr.ModernHistory.Utils.dll
+E:\Programing\c#\ModernHistory\ModernHistory\Fhr.ModernHistory.Repositorys\bin\Debug\MySql.Data.dll
+E:\Programing\c#\ModernHistory\ModernHistory\Fhr.ModernHistory.Repositorys\bin\Debug\MySql.Data.Entity.EF6.dll
+E:\Programing\c#\ModernHistory\ModernHistory\Fhr.ModernHistory.Repositorys\bin\Debug\EntityFramework.xml
+E:\Programing\c#\ModernHistory\ModernHistory\Fhr.ModernHistory.Repositorys\bin\Debug\EntityFramework.SqlServer.xml
+E:\Programing\c#\ModernHistory\ModernHistory\Fhr.ModernHistory.Repositorys\bin\Debug\Fhr.ModernHistory.Models.pdb
+E:\Programing\c#\ModernHistory\ModernHistory\Fhr.ModernHistory.Repositorys\bin\Debug\Fhr.ModernHistory.Utils.pdb
+E:\Programing\c#\ModernHistory\ModernHistory\Fhr.ModernHistory.Repositorys\obj\Debug\Fhr.ModernHistory.Repositorys.dll
+E:\Programing\c#\ModernHistory\ModernHistory\Fhr.ModernHistory.Repositorys\obj\Debug\Fhr.ModernHistory.Repositorys.pdb

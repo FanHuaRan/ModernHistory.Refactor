@@ -1,0 +1,5 @@
+E:\Programing\c#\ModernHistory\ModernHistory\Fhr.ModernHistory.Utils\bin\Debug\Fhr.ModernHistory.Utils.dll
+E:\Programing\c#\ModernHistory\ModernHistory\Fhr.ModernHistory.Utils\bin\Debug\Fhr.ModernHistory.Utils.pdb
+E:\Programing\c#\ModernHistory\ModernHistory\Fhr.ModernHistory.Utils\obj\Debug\Fhr.ModernHistory.Utils.dll
+E:\Programing\c#\ModernHistory\ModernHistory\Fhr.ModernHistory.Utils\obj\Debug\Fhr.ModernHistory.Utils.pdb
+E:\Programing\c#\ModernHistory\ModernHistory\Fhr.ModernHistory.Utils\obj\Debug\Fhr.ModernHistory.Utils.csprojResolveAssemblyReference.cache

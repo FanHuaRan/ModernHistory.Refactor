@@ -1,0 +1,1 @@
+﻿主要包括针对于ModernHistory的实体对象

@@ -1,0 +1,108 @@
+﻿<UserControl x:Class="ModernHistory.Views.Person.PersonAdd"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top">
+            <TextBlock Text="新增名人" Style="{StaticResource Heading2}" Margin="0,0,0,8" />
+        </StackPanel>
+        <ScrollViewer DockPanel.Dock="Left">
+            <StackPanel MinWidth="200">
+
+                <!-- actual form starts here -->
+                <StackPanel x:Name="Form" Orientation="Vertical">
+                    <StackPanel.Resources>
+                        <Style TargetType="StackPanel">
+                            <Setter Property="Orientation" Value="Horizontal" />
+                            <Setter Property="Margin" Value="0,0,0,4" />
+                        </Style>
+                        <Style TargetType="Label" BasedOn="{StaticResource {x:Type Label}}">
+                            <Setter Property="Width" Value="100" />
+                            <Setter Property="VerticalAlignment" Value="Center" />
+                        </Style>
+                        <Style TargetType="CheckBox" BasedOn="{StaticResource {x:Type CheckBox}}">
+                            <Setter Property="Padding" Value="0,3" />
+                        </Style>
+                        <Style TargetType="RadioButton" BasedOn="{StaticResource {x:Type RadioButton}}">
+                            <Setter Property="Padding" Value="0,3" />
+                        </Style>
+                    </StackPanel.Resources>
+
+                    <StackPanel>
+                        <Label Content="姓名" Target="{Binding ElementName=TextName}"/>
+                        <TextBox x:Name="TextName" Width="150" Text="{Binding PersonName, Mode=TwoWay, ValidatesOnDataErrors=True}" />
+                    </StackPanel>
+
+                    <StackPanel>
+                        <Label Content="性别" Target="{Binding ElementName=RadioGendeMale}"/>
+                        <RadioButton x:Name="RadioGendeMale" Content="Male" />
+                        <RadioButton Content="Female" Margin="8,0,0,0" />
+                    </StackPanel>
+
+                    <StackPanel>
+                        <Label Content="省份" Target="{Binding ElementName=ComboProvince}"/>
+                        <ComboBox x:Name="ComboProvince" Width="150" SelectedItem="{Binding Province,Mode=TwoWay}">
+                            <ComboBoxItem>Alabama</ComboBoxItem>
+                            <ComboBoxItem>Missouri</ComboBoxItem>
+                            <ComboBoxItem>Montana</ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+
+                    <StackPanel>
+                        <Label Content="民族" Target="{Binding ElementName=ComboNation}"/>
+                        <ComboBox x:Name="ComboNation" Width="150" SelectedItem="{Binding Nation,Mode=TwoWay}">
+                            <ComboBoxItem>Alabama</ComboBoxItem>
+                            <ComboBoxItem>Missouri</ComboBoxItem>
+                            <ComboBoxItem>Montana</ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+
+                    <StackPanel>
+                        <Label Content="出生日期" Target="{Binding ElementName=DateBirth}" />
+                        <DatePicker x:Name="DateBirth" SelectedDate="{Binding BornDate, Mode=TwoWay}"  />
+                    </StackPanel>
+
+
+                    <StackPanel>
+                        <Label Content="出生地" Target="{Binding ElementName=TextBornPlace}"/>
+                        <TextBox x:Name="TextBornPlace" Width="150" Text="{Binding BornPlace, Mode=TwoWay, ValidatesOnDataErrors=True}"/>
+
+                    </StackPanel>
+
+                    <StackPanel>
+                        <Label Content="出生地经度" Target="{Binding ElementName=TextBornX}"/>
+                        <TextBox x:Name="TextBornX" Width="150" Text="{Binding BornX, Mode=TwoWay, ValidatesOnDataErrors=True}"/>
+                    </StackPanel>
+
+                    <StackPanel>
+                        <Label Content="出生地纬度" Target="{Binding ElementName=TextBornY}"/>
+                        <TextBox x:Name="TextBornY" Width="150" Text="{Binding BornY, Mode=TwoWay, ValidatesOnDataErrors=True}"/>
+                    </StackPanel>
+
+                    <StackPanel>
+                        <Label Content="死亡日期" Target="{Binding ElementName=DeadDead}" />
+                        <DatePicker x:Name="DeadDead"  SelectedDate="{Binding DeadDate}"/>
+                    </StackPanel>
+
+                    <StackPanel>
+                        <Label Content="名人类型" Target="{Binding ElementName=ComboPersonType}"/>
+                        <ComboBox x:Name="ComboPersonType" Width="150" SelectedItem="{Binding FamousPersonTypeId,Mode=TwoWay}">
+                        </ComboBox>
+                    </StackPanel>
+
+                    <Button Content="确认增加" Margin="100,16,0,0" HorizontalAlignment="Left" />
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+        <StackPanel  DockPanel.Dock="Right">
+            <Label>人物图片</Label>
+            <Image >
+
+            </Image>
+        </StackPanel>
+    </DockPanel>
+</UserControl>

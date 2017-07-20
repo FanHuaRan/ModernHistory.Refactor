@@ -1,0 +1,106 @@
+﻿<UserControl x:Class="ModernHistory.Views.Person.PersonDetail"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="600"
+             DataContext="{Binding Source={StaticResource Locator}, Path=PersonsInfoViewModel}">
+    <DockPanel DataContext="{Binding SelectFamousePerson}">
+        <StackPanel DockPanel.Dock="Top">
+            <TextBlock Text="名人信息" Style="{StaticResource Heading2}" Margin="0,0,0,8" />
+        </StackPanel>
+        <ScrollViewer DockPanel.Dock="Left">
+            <StackPanel MinWidth="200">
+                <!-- actual form starts here -->
+                <StackPanel x:Name="Form" Orientation="Vertical">
+                    <StackPanel.Resources>
+                        <Style TargetType="StackPanel">
+                            <Setter Property="Orientation" Value="Horizontal" />
+                            <Setter Property="Margin" Value="0,0,0,4" />
+                        </Style>
+                        <Style TargetType="Label" BasedOn="{StaticResource {x:Type Label}}">
+                            <Setter Property="Width" Value="100" />
+                            <Setter Property="VerticalAlignment" Value="Center" />
+                        </Style>
+                        <Style TargetType="CheckBox" BasedOn="{StaticResource {x:Type CheckBox}}">
+                            <Setter Property="Padding" Value="0,3" />
+                        </Style>
+                        <Style TargetType="RadioButton" BasedOn="{StaticResource {x:Type RadioButton}}">
+                            <Setter Property="Padding" Value="0,3" />
+                        </Style>
+                    </StackPanel.Resources>
+
+                    <StackPanel>
+                        <Label Content="姓名" Target="{Binding ElementName=TextName}"/>
+                        <TextBox x:Name="TextName" Width="150" Text="{Binding PersonName}" IsReadOnly="True" />
+                    </StackPanel>
+
+                    <StackPanel>
+                        <Label Content="性别"/>
+                        <TextBox x:Name="TextGender" Width="150" Text="{Binding Gender,Converter={StaticResource genderCoverter}}" IsReadOnly="True" />
+                    </StackPanel>
+
+                    <StackPanel>
+                        <Label Content="省份"/>
+                        <TextBox x:Name="TextProvince" Width="150" Text="{Binding Province}" IsReadOnly="True">
+                        </TextBox>
+                    </StackPanel>
+
+                    <StackPanel>
+                        <Label Content="民族"/>
+                        <TextBox x:Name="TextNation" Width="150" Text="{Binding Nation}" IsReadOnly="True"/>
+                    </StackPanel>
+
+                    <StackPanel>
+                        <Label Content="出生日期"/>
+                        <DatePicker x:Name="DateBirth" SelectedDate="{Binding BornDate}" IsEnabled="False"/>
+                    </StackPanel>
+
+
+                    <StackPanel>
+                        <Label Content="出生地"/>
+                        <TextBox x:Name="TextBornPlace" Width="150" Text="{Binding BornPlace}" IsReadOnly="True"/>
+
+                    </StackPanel>
+
+                    <StackPanel>
+                        <Label Content="出生地经度"/>
+                        <TextBox x:Name="TextBornX" Width="150" Text="{Binding BornX}" IsReadOnly="True"/>
+                    </StackPanel>
+
+                    <StackPanel>
+                        <Label Content="出生地纬度"/>
+                        <TextBox x:Name="TextBornY" Width="150" Text="{Binding BornY}" IsReadOnly="True"/>
+                    </StackPanel>
+
+                    <StackPanel>
+                        <Label Content="死亡日期"/>
+                        <DatePicker x:Name="DateDead" SelectedDate="{Binding DeadDate}" IsEnabled="False" />
+                    </StackPanel>
+                    
+                    <StackPanel>
+                        <Label Content="名人类型" Target="{Binding ElementName=ComboPersonType}"/>
+                        <ComboBox x:Name="ComboPersonType" Width="150" SelectedItem="{Binding FamousPersonTypeId,Mode=TwoWay, Converter={StaticResource famousPersonTypeConverter}}"
+                                  DisplayMemberPath="FamousPersonTypeName" IsEnabled="True" 
+                                  ItemsSource="{Binding Source={StaticResource Locator}, Path=CommonConstViewModel.FamousPersonTypes}">
+                        </ComboBox>
+                    </StackPanel>
+                </StackPanel>
+                <Grid>
+                    <Button Content="修改" Margin="33,10,161,10" Command="mui:LinkCommands.NavigateLink"
+                            CommandParameter="/Views/Person/PersonEdit.xaml"/>
+                    <Button Content="删除" Margin="165,10,31,10" Command="mui:LinkCommands.NavigateLink"
+                            CommandParameter="/Views/Person/PersonDeleteConfirm.xaml"/>
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
+        <StackPanel  DockPanel.Dock="Right">
+            <Image Source="{Binding FamousPersonId,Converter={StaticResource personImageConverter}}" Stretch='None' > 
+                    <!-- Stretch='Uniform' 
+                   Width="300" Height="400">-->
+            </Image>
+        </StackPanel>
+    </DockPanel>
+</UserControl>
