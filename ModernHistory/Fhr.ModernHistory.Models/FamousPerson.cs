@@ -77,15 +77,5 @@ namespace Fhr.ModernHistory.Models
         [Required(ErrorMessage = "date of dead is required")]
         public DateTime DeadDate { get; set; }
 
-        /// <summary>
-        /// 名人类型编号
-        /// </summary>
-        [Required(ErrorMessage = "FamousPersonType Id is required")]
-        public Int32 FamousPersonTypeId { get; set; }
-
-        /// <summary>
-        /// 名人类型
-        /// </summary>
-        public virtual FamousPersonType PersonType { get; set; }
     }
 }

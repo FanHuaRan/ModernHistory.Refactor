@@ -63,15 +63,5 @@ namespace Fhr.ModernHistory.Models
         [Required(ErrorMessage = "Event Occur Latitude is required")]
         public double OccurY { get; set; }
 
-        /// <summary>
-        /// 历史事件类型编号
-        /// </summary>
-        [Required(ErrorMessage = "HistoryEventType Id is required")]
-        public Int32 HistoryEventTypeId { get; set; }
-
-        /// <summary>
-        /// 历史事件类型
-        /// </summary>
-        public virtual HistoryEventType EventType { get; set; }
     }
 }
