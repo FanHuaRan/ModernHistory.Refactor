@@ -1,0 +1,5 @@
+E:\Programing\c#\ModernHistory.Refactor\ModernHistory\Fhr.ModernHistory.Dtos\bin\Debug\Fhr.ModernHistory.Dtos.dll
+E:\Programing\c#\ModernHistory.Refactor\ModernHistory\Fhr.ModernHistory.Dtos\bin\Debug\Fhr.ModernHistory.Dtos.pdb
+E:\Programing\c#\ModernHistory.Refactor\ModernHistory\Fhr.ModernHistory.Dtos\obj\Debug\Fhr.ModernHistory.Dtos.csprojResolveAssemblyReference.cache
+E:\Programing\c#\ModernHistory.Refactor\ModernHistory\Fhr.ModernHistory.Dtos\obj\Debug\Fhr.ModernHistory.Dtos.dll
+E:\Programing\c#\ModernHistory.Refactor\ModernHistory\Fhr.ModernHistory.Dtos\obj\Debug\Fhr.ModernHistory.Dtos.pdb

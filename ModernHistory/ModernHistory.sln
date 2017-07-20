@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fhr.ModernHistory.Models", "Fhr.ModernHistory.Models\Fhr.ModernHistory.Models.csproj", "{09436CA9-3DEA-4A14-9561-7C843047EBA0}"
 EndProject
@@ -12,6 +12,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fhr.ModernHistory.Services", "Fhr.ModernHistory.Services\Fhr.ModernHistory.Services.csproj", "{4D4D892E-6019-4292-9CBE-D305634F0BF0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModernHistoryWebApi", "ModernHistoryWebApi\ModernHistoryWebApi.csproj", "{B8012099-54D5-4936-AE5E-9D2CAFEF0AEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fhr.ModernHistory.Dtos", "Fhr.ModernHistory.Dtos\Fhr.ModernHistory.Dtos.csproj", "{3181A9CA-948A-4018-B0BD-32BB6D70E374}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fhr.ModernHistory.DtoDoConverters", "Fhr.ModernHistory.DtoDoConverters\Fhr.ModernHistory.DtoDoConverters.csproj", "{DCB51AB0-2EBF-4456-ABF3-BF8957357D76}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,6 +77,30 @@ Global
 		{B8012099-54D5-4936-AE5E-9D2CAFEF0AEE}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{B8012099-54D5-4936-AE5E-9D2CAFEF0AEE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{B8012099-54D5-4936-AE5E-9D2CAFEF0AEE}.Release|x86.ActiveCfg = Release|Any CPU
+		{3181A9CA-948A-4018-B0BD-32BB6D70E374}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3181A9CA-948A-4018-B0BD-32BB6D70E374}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3181A9CA-948A-4018-B0BD-32BB6D70E374}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{3181A9CA-948A-4018-B0BD-32BB6D70E374}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{3181A9CA-948A-4018-B0BD-32BB6D70E374}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3181A9CA-948A-4018-B0BD-32BB6D70E374}.Debug|x86.Build.0 = Debug|Any CPU
+		{3181A9CA-948A-4018-B0BD-32BB6D70E374}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3181A9CA-948A-4018-B0BD-32BB6D70E374}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3181A9CA-948A-4018-B0BD-32BB6D70E374}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{3181A9CA-948A-4018-B0BD-32BB6D70E374}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{3181A9CA-948A-4018-B0BD-32BB6D70E374}.Release|x86.ActiveCfg = Release|Any CPU
+		{3181A9CA-948A-4018-B0BD-32BB6D70E374}.Release|x86.Build.0 = Release|Any CPU
+		{DCB51AB0-2EBF-4456-ABF3-BF8957357D76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCB51AB0-2EBF-4456-ABF3-BF8957357D76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCB51AB0-2EBF-4456-ABF3-BF8957357D76}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{DCB51AB0-2EBF-4456-ABF3-BF8957357D76}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{DCB51AB0-2EBF-4456-ABF3-BF8957357D76}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DCB51AB0-2EBF-4456-ABF3-BF8957357D76}.Debug|x86.Build.0 = Debug|Any CPU
+		{DCB51AB0-2EBF-4456-ABF3-BF8957357D76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCB51AB0-2EBF-4456-ABF3-BF8957357D76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCB51AB0-2EBF-4456-ABF3-BF8957357D76}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{DCB51AB0-2EBF-4456-ABF3-BF8957357D76}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{DCB51AB0-2EBF-4456-ABF3-BF8957357D76}.Release|x86.ActiveCfg = Release|Any CPU
+		{DCB51AB0-2EBF-4456-ABF3-BF8957357D76}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

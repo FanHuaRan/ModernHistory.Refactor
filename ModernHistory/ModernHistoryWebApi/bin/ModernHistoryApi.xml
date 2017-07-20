@@ -499,34 +499,10 @@
              2017/07/02 fhr
             </summary>
         </member>
-        <member name="T:ModernHistoryWebApi.Controllers.FamousPersonTypeController">
-            <summary>
-            FamousPersonType API控制器
-             2017/07/02 fhr
-            </summary>
-        </member>
-        <member name="T:ModernHistoryWebApi.Controllers.HistoryEventController">
-            <summary>
-            HistoryEvent api控制器
-             2017/07/02 fhr
-            </summary>
-        </member>
-        <member name="T:ModernHistoryWebApi.Controllers.HistoryEventTypeController">
-            <summary>
-            HistoryEventType API控制器
-            2017/07/06 fhr
-            </summary>
-        </member>
         <member name="T:ModernHistoryWebApi.Controllers.ImageController">
             <summary>
             图片下载控制器
             参考：http://www.cnblogs.com/Kummy/p/3553799.html
-            </summary>
-        </member>
-        <member name="T:ModernHistoryWebApi.Controllers.PersonEventRelationController">
-            <summary>
-            PersonEventRelation API控制器
-            2017/07/06 
             </summary>
         </member>
         <member name="T:ModernHistoryWebApi.Dependencys.NinjectDependencyResolver">

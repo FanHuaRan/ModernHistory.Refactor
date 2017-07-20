@@ -45,7 +45,7 @@ namespace Fhr.ModernHistory.Repositorys.Contexts
                               BornY=124d,
                               DeadDate=DateTime.Parse("1908/06/02"),
                               Gender=1,
-                              PersonType=personTypes.First()
+                            //  PersonType=personTypes.First()
                         },
                            new FamousPerson()
                         {
@@ -58,22 +58,13 @@ namespace Fhr.ModernHistory.Repositorys.Contexts
                               BornY=124d,
                               DeadDate=DateTime.Parse("1998/06/02"),
                               Gender=1,
-                              PersonType=personTypes.First()
+                             // PersonType=personTypes.First()
                         }
-                  };
-                  var evenTypes = new List<HistoryEventType>()
-                  {
-                        new HistoryEventType(){ HistoryEventTypeName="政治"},
-                        new HistoryEventType(){HistoryEventTypeName="军事"},
-                        new HistoryEventType(){HistoryEventTypeName="经济"},
-                        new HistoryEventType(){HistoryEventTypeName="文学"},
-                        new HistoryEventType(){HistoryEventTypeName="军事"},
                   };
                   var events = new List<HistoryEvent>() {
                         new HistoryEvent()
                         {
                                Detail="xxxx事件",
-                               EventType=evenTypes.FirstOrDefault(),
                                OccurDate=DateTime.Now,
                                 OccurX=45d,
                                    OccurY=45d,
@@ -83,7 +74,6 @@ namespace Fhr.ModernHistory.Repositorys.Contexts
                         }
                   };
                   personTypes.ForEach(p => context.FamousPersonTypes.Add(p));
-                  evenTypes.ForEach(p => context.HistoryEventTypes.Add(p));
                   persons.ForEach(p => context.FamousPersons.Add(p));
                   events.ForEach(p => context.HistoryEvents.Add(p));
                   context.SaveChanges();

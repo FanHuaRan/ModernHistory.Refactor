@@ -5,8 +5,8 @@ using System.Net;
 using System.Net.Http;
 using System.Web;
 using System.Web.Http;
-using Fhr.ModernHistory.Models;
-using Fhr.ModernHistory.Models.SearchModels;
+using Fhr.ModernHistory.Dtos;
+using Fhr.ModernHistory.Dtos.SearchModels;
 using Fhr.ModernHistory.Services;
 using ModernHistoryWebApi.ExceptionDeal;
 

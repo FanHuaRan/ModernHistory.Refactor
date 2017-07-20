@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Fhr.ModernHistory.Models;
-using Fhr.ModernHistory.Models.SearchModels;
+using Fhr.ModernHistory.Dtos;
+using Fhr.ModernHistory.Dtos.SearchModels;
 
 namespace Fhr.ModernHistory.Services
 {
@@ -14,16 +14,16 @@ namespace Fhr.ModernHistory.Services
       /// </summary>
       public interface IFamousPersonService
     {
-            IEnumerable<FamousPerson> FindAll();
+            IEnumerable<FamousPersonInfo> FindAll();
 
-            FamousPerson FindById(Object id);
+            FamousPersonInfo FindById(Object id);
 
-            void Update(FamousPerson famousePerson);
+            void Update(FamousPersonInfo famousePerson);
 
-            FamousPerson Save(FamousPerson famousePerson);
+            FamousPersonInfo Save(FamousPersonInfo famousePerson);
 
             void Delete(object id);
 
-            IEnumerable<FamousPerson> Search(PersonSearchModel searchModel);
+            IEnumerable<FamousPersonInfo> Search(PersonSearchModel searchModel);
       }
 }

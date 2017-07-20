@@ -14,64 +14,8 @@ namespace Fhr.ModernHistory.Repositorys.Impl
       /// </summary>
       public class FamousPersonRepositoryClass : BaseRepositoryClass<FamousPerson>, IFamousPersonRepository
       {
-            /// <summary>
-            /// 重写FindAll，让其支持PersonType属性的加载
-            /// </summary>
-            /// <returns></returns>
-            public override IEnumerable<FamousPerson> FindAll()
-            {
-                  using (var context = new ModernHisContext())
-                  {
-                        return context.FamousPersons.Include(p => p.PersonType)
-                                                                         .Select(p => p)
-                                                                         .ToList();
-                  }
-            }
 
-            public override FamousPerson FindById(object id)
-            {
-                  using (var context = new ModernHisContext())
-                  {
-                        return context.FamousPersons.Include(p => p.PersonType)
-                                                                         .Where(p => p.FamousPersonId == (int)id)
-                                                                         .Select(p => p)
-                                                                         .FirstOrDefault();
-                  }
-            }
-
-            public override IEnumerable<FamousPerson> FindByLinq(Func<FamousPerson, bool> expression)
-            {
-                  using (var context = new ModernHisContext())
-                  {
-                        return context.FamousPersons.Include(p => p.PersonType)
-                                                                         .Where(expression)
-                                                                         .Select(p => p)
-                                                                         .ToList();
-                  }
-            }
-
-            public override IEnumerable<V> FindBySelect<V>(Func<FamousPerson, V> selectExpression)
-            {
-                  using (var context = new ModernHisContext())
-                  {
-                        return context.FamousPersons.Include(p => p.PersonType)
-                                                                         .Select(selectExpression)
-                                                                         .ToList();
-                  }
-            }
-
-            public override IEnumerable<object> FindByWhereAndSelect(Func<FamousPerson, bool> whereExpression, Func<FamousPerson, object> selectExpression)
-            {
-                  using (var context = new ModernHisContext())
-                  {
-                        return context.FamousPersons.Include(p => p.PersonType)
-                                                                         .Where(whereExpression)
-                                                                         .Select(selectExpression)
-                                                                          .ToList();
-                  }
-            }
-
-            public void testTran()
+            private void testTran()
             {
                   //数据库上下文
                   using (var context = new ModernHisContext())

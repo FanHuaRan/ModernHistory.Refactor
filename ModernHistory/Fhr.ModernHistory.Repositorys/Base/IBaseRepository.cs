@@ -80,5 +80,13 @@ namespace Fhr.ModernHistory.Repositorys
         /// <param name="sqlParams"></param>
         /// <returns></returns>
         IEnumerable<T> FindBySQL(string sql, params object[] sqlParams);
-    }
+
+            /// <summary>
+            /// 通过sql进行查询
+            /// </summary>
+            /// <param name="sql"></param>
+            /// <param name="sqlParams"></param>
+            /// <returns></returns>
+            void DeleteByLinq(Func<T, bool> whereExpression);
+      }
 }

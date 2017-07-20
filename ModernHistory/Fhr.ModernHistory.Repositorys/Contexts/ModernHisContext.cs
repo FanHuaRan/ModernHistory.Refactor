@@ -1,5 +1,4 @@
-﻿using Fhr.ModernHistory.Models;
-using MySql.Data.Entity;
+﻿using MySql.Data.Entity;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -7,6 +6,7 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Fhr.ModernHistory.Models;
 
 namespace Fhr.ModernHistory.Repositorys.Contexts
 {
@@ -31,11 +31,11 @@ namespace Fhr.ModernHistory.Repositorys.Contexts
 
             public DbSet<HistoryEvent> HistoryEvents { get; set; }
 
-            public DbSet<HistoryEventType> HistoryEventTypes { get; set; }
-
             public DbSet<MhUser> MhUsers { get; set; }
 
             public DbSet<PersonEventRelation> PersonEventRelation { get; set; }
+
+            public DbSet<PersonTypeRelation> PersonTypeRelations { get; set; }
 
             //去掉表名复数
             protected override void OnModelCreating(DbModelBuilder modelbuilder)

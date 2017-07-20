@@ -130,5 +130,20 @@ namespace Fhr.ModernHistory.Repositorys
                         return context.Database.SqlQuery<T>(sql, sqlParams).ToList();
                   }
             }
+
+            public void DeleteByLinq(Func<T, bool> whereExpression)
+            {
+                  using (var context = new ModernHisContext())
+                  {
+                        var objs = context.Set<T>()
+                                      .Where(whereExpression)
+                                      .Select(p => p);
+                        foreach(var obj in objs)
+                        {
+                              context.Set<T>().Remove(obj);
+                        }
+                        context.SaveChanges();
+                  }
+            }
       }
 }

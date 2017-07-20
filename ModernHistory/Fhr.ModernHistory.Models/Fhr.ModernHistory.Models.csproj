@@ -40,18 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EventTypeRelation.cs" />
     <Compile Include="FamousPerson.cs" />
     <Compile Include="FamousPersonType.cs" />
     <Compile Include="HistoryEvent.cs" />
-    <Compile Include="HistoryEventType.cs" />
     <Compile Include="MhUser.cs" />
     <Compile Include="PersonEventRelation.cs" />
     <Compile Include="PersonTypeRelation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SearchModels\EventSearchModel.cs" />
-    <Compile Include="SearchModels\PersonEventRelationSearchModel.cs" />
-    <Compile Include="SearchModels\PersonSearchModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="README.txt" />

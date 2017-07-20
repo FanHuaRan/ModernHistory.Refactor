@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Fhr.ModernHistory.DtoConverters;
+using Fhr.ModernHistory.Dtos;
+using Fhr.ModernHistory.Dtos.SearchModels;
 using Fhr.ModernHistory.Models;
-using Fhr.ModernHistory.Models.SearchModels;
 using Fhr.ModernHistory.Repositorys;
 using Fhr.ModernHistory.Repositorys.Impl;
 
@@ -18,9 +20,15 @@ namespace Fhr.ModernHistory.Services.Impl
       {
             private IFamousPersonRepository famousPersonRepository = null;
 
-            public FamousPersonServiceClass(IFamousPersonRepository famousPersonRepository)
+            private IFamousPersonTypeRepository famousTypeRepository = null;
+
+            private IPersonTypeRelationRepository personTypeRelationRepository = null;
+
+            public FamousPersonServiceClass(IFamousPersonRepository famousPersonRepository,IFamousPersonTypeRepository famousTypeRepository, IPersonTypeRelationRepository personTypeRelationRepository)
             {
                   this.famousPersonRepository = famousPersonRepository;
+                  this.famousTypeRepository = famousTypeRepository;
+                  this.personTypeRelationRepository = personTypeRelationRepository;
             }
 
             public void Delete(object id)
@@ -28,27 +36,57 @@ namespace Fhr.ModernHistory.Services.Impl
                   famousPersonRepository.DeleteById(id);
             }
 
-            public IEnumerable<FamousPerson> FindAll()
+            public IEnumerable<FamousPersonInfo> FindAll()
             {
-                  return famousPersonRepository.FindAll();
+                  var persons = famousPersonRepository.FindAll();
+                  var personInfos = new List<FamousPersonInfo>();
+                  foreach (var person in persons)
+                  {
+                       var typeIds=personTypeRelationRepository.FindByWhereAndSelect(p => p.FamousPersonId == person.FamousPersonId, p => p.FamousPersonTypeId).ToList();
+                        personInfos.Add(FamousPersonConverter.ConvertToDto(person, (IEnumerable<int>)typeIds));
+                  }
+                  return personInfos;
             }
 
-            public FamousPerson FindById(object id)
+            public FamousPersonInfo FindById(object id)
             {
-                  return famousPersonRepository.FindById(id);
+                  var person=famousPersonRepository.FindById(id);
+                  var typeIds = personTypeRelationRepository.FindByWhereAndSelect(p => p.FamousPersonId == (int)id, p => p.FamousPersonTypeId).ToList();
+                  return FamousPersonConverter.ConvertToDto(person, (IEnumerable<int>)typeIds);
             }
 
-            public FamousPerson Save(FamousPerson famousePerson)
+            public FamousPersonInfo Save(FamousPersonInfo famousePersonInfo)
             {
-                  return famousPersonRepository.Save(famousePerson);
+                  var person = famousPersonRepository.Save(FamousPersonConverter.ConvertToDo(famousePersonInfo));
+                  var typeIds = famousePersonInfo.PersonTypeIds;
+                  foreach(var typeId in typeIds)
+                  {
+                        personTypeRelationRepository.Save(new PersonTypeRelation()
+                        {
+                               FamousPersonTypeId=typeId,
+                                FamousPersonId=person.FamousPersonId
+                        });
+                  }
+                  famousePersonInfo.FamousPersonId = person.FamousPersonId;
+                  return famousePersonInfo;
             }
 
-            public void Update(FamousPerson famousePerson)
+            public void Update(FamousPersonInfo famousePersonInfo)
             {
-                   famousPersonRepository.Update(famousePerson,p=>p.FamousPersonId);
+                  famousPersonRepository.Update(FamousPersonConverter.ConvertToDo(famousePersonInfo), p => p.FamousPersonId);
+                  personTypeRelationRepository.DeleteByLinq(p => p.FamousPersonId == famousePersonInfo.FamousPersonId);
+                  var typeIds = famousePersonInfo.PersonTypeIds;
+                  foreach (var typeId in typeIds)
+                  {
+                        personTypeRelationRepository.Save(new PersonTypeRelation()
+                        {
+                              FamousPersonTypeId = typeId,
+                              FamousPersonId = famousePersonInfo.FamousPersonId
+                        });
+                  }
             }
 
-            public IEnumerable<FamousPerson> Search(PersonSearchModel searchModel)
+            public IEnumerable<FamousPersonInfo> Search(PersonSearchModel searchModel)
             {
                   //初始化查询sql语句
                   var sqlBuilder = new StringBuilder("select * from famousperson where");
@@ -85,15 +123,22 @@ namespace Fhr.ModernHistory.Services.Impl
                         sqlBuilder.Append("DeadDate <={0} and ");
                         searchParams.Add(searchModel.MaxDeadDate);
                   }
+                  var personInfos = new List<FamousPersonInfo>();
                   //无任何查询参数 返回无元素的数组
                   if (searchParams.Count == 0)
                   {
-                        return new List<FamousPerson>();
+                        return personInfos;
                   }
                   //移除最后多余的"and "
                   sqlBuilder.Remove(sqlBuilder.Length - 5, 4);
                   //sql查询
-                  return famousPersonRepository.FindBySQL(sqlBuilder.ToString(), searchParams.ToArray());
+                  var persons=famousPersonRepository.FindBySQL(sqlBuilder.ToString(), searchParams.ToArray());
+                  foreach (var person in persons)
+                  {
+                        var typeIds = personTypeRelationRepository.FindByWhereAndSelect(p => p.FamousPersonId == person.FamousPersonId, p => p.FamousPersonTypeId).ToList();
+                        personInfos.Add(FamousPersonConverter.ConvertToDto(person, (IEnumerable<int>)typeIds));
+                  }
+                  return personInfos;
             }
             private void DealStringQueryParam(string paramName,string value,StringBuilder builder,List<object> searchParams)
             {

@@ -8,8 +8,8 @@ using System.Net.Http;
 using System.Text;
 using System.Web;
 using System.Web.Http;
-using Fhr.ModernHistory.Models;
-using Fhr.ModernHistory.Models.SearchModels;
+using Fhr.ModernHistory.Dtos;
+using Fhr.ModernHistory.Dtos.SearchModels;
 using Fhr.ModernHistory.Repositorys.Contexts;
 using Fhr.ModernHistory.Services;
 using Fhr.ModernHistory.Services.Impl;
@@ -36,12 +36,12 @@ namespace ModernHistoryWebApi.Controllers
                   this.PictureService = pictureService;
             }
 
-            public IEnumerable<FamousPerson> Get()
+            public IEnumerable<FamousPersonInfo> Get()
             {
                   return FamousPersonService.FindAll();
             }
 
-            public FamousPerson Get(int id)
+            public FamousPersonInfo Get(int id)
             {
                   var person= FamousPersonService.FindById(id);
                   if (person == null)
@@ -51,7 +51,7 @@ namespace ModernHistoryWebApi.Controllers
                   return person;
             }
             [HttpPost]
-            public FamousPerson Save([FromBody]FamousPerson value)
+            public FamousPersonInfo Save([FromBody]FamousPersonInfo value)
             {
                   if (value != null && ModelState.IsValid)
                   {
@@ -63,7 +63,7 @@ namespace ModernHistoryWebApi.Controllers
                   }
             }
             [HttpPost]
-            public void Update(int id, [FromBody]FamousPerson value)
+            public void Update(int id, [FromBody]FamousPersonInfo value)
             {
                   if (value!=null&&ModelState.IsValid)
                   {
@@ -82,7 +82,7 @@ namespace ModernHistoryWebApi.Controllers
                   FamousPersonService.Delete(id);
             }
             [HttpPost]
-            public IEnumerable<FamousPerson> Search([FromBody] PersonSearchModel searchModel)
+            public IEnumerable<FamousPersonInfo> Search([FromBody] PersonSearchModel searchModel)
             {
                   return FamousPersonService.Search(searchModel);
             }

@@ -1,0 +1,9 @@
+E:\Programing\c#\ModernHistory.Refactor\ModernHistory\Fhr.ModernHistory.DtoDoConverters\obj\Debug\Fhr.ModernHistory.DtoDoConverters.csprojResolveAssemblyReference.cache
+E:\Programing\c#\ModernHistory.Refactor\ModernHistory\Fhr.ModernHistory.DtoDoConverters\bin\Debug\Fhr.ModernHistory.DtoDoConverters.dll
+E:\Programing\c#\ModernHistory.Refactor\ModernHistory\Fhr.ModernHistory.DtoDoConverters\bin\Debug\Fhr.ModernHistory.DtoDoConverters.pdb
+E:\Programing\c#\ModernHistory.Refactor\ModernHistory\Fhr.ModernHistory.DtoDoConverters\bin\Debug\Fhr.ModernHistory.Dtos.dll
+E:\Programing\c#\ModernHistory.Refactor\ModernHistory\Fhr.ModernHistory.DtoDoConverters\bin\Debug\Fhr.ModernHistory.Models.dll
+E:\Programing\c#\ModernHistory.Refactor\ModernHistory\Fhr.ModernHistory.DtoDoConverters\bin\Debug\Fhr.ModernHistory.Dtos.pdb
+E:\Programing\c#\ModernHistory.Refactor\ModernHistory\Fhr.ModernHistory.DtoDoConverters\bin\Debug\Fhr.ModernHistory.Models.pdb
+E:\Programing\c#\ModernHistory.Refactor\ModernHistory\Fhr.ModernHistory.DtoDoConverters\obj\Debug\Fhr.ModernHistory.DtoDoConverters.dll
+E:\Programing\c#\ModernHistory.Refactor\ModernHistory\Fhr.ModernHistory.DtoDoConverters\obj\Debug\Fhr.ModernHistory.DtoDoConverters.pdb

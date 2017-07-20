@@ -65,15 +65,15 @@
     <Compile Include="IFamousPersonRepository.cs" />
     <Compile Include="IFamousPersonTypeRepository.cs" />
     <Compile Include="IHistoryEventRepository.cs" />
-    <Compile Include="IHistoryEventTypeRepository.cs" />
     <Compile Include="Impl\FamousPersonRepositoryClass.cs" />
     <Compile Include="Impl\FamousPersonTypeRepositoryClass.cs" />
     <Compile Include="Impl\HistoryEventRepositoryClass.cs" />
-    <Compile Include="Impl\HistoryEventTypeRepositoryClass.cs" />
     <Compile Include="Impl\MhUserRepositoryClass.cs" />
     <Compile Include="Impl\PersonEventRelationRepositoryClass.cs" />
+    <Compile Include="Impl\PersonTypeRelationRepositoryClass.cs" />
     <Compile Include="IPersonEventRelationRepository.cs" />
     <Compile Include="IMhUserRepository.cs" />
+    <Compile Include="IPersonTypeRelationRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

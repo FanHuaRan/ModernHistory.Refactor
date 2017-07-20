@@ -1,1 +1,1 @@
-﻿主要包括针对于ModernHistory的实体对象
+﻿主要包括针对DO和PO 在这里DO和PO混用了

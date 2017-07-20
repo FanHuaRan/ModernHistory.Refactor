@@ -56,17 +56,17 @@ namespace ModernHistoryWebApi.Dependencys
                   this.kernel.Bind<IFamousPersonRepository>().To<FamousPersonRepositoryClass>().InSingletonScope();
                   this.kernel.Bind<IFamousPersonTypeRepository>().To<FamousPersonTypeRepositoryClass>().InSingletonScope();
                   this.kernel.Bind<IHistoryEventRepository>().To<HistoryEventRepositoryClass>().InSingletonScope();
-                  this.kernel.Bind<IHistoryEventTypeRepository>().To<HistoryEventTypeRepositoryClass>().InSingletonScope();
+                //  this.kernel.Bind<IHistoryEventTypeRepository>().To<HistoryEventTypeRepositoryClass>().InSingletonScope();
                   this.kernel.Bind<IMhUserRepository>().To<MhUserRepositoryClass>().InSingletonScope();
                   this.kernel.Bind<IPersonEventRelationRepository>().To<PersonEventRelationRepositoryClass>().InSingletonScope();
 
                   //service层组件
                   this.kernel.Bind<IFamousPersonService>().To<FamousPersonServiceClass>().InSingletonScope();
-                  this.kernel.Bind<IFamousPersonTypeService>().To<FamousPersonTypeServiceClass>().InSingletonScope();
-                  this.kernel.Bind<IHistoryEventService>().To<HistoryEventServiceClass>().InSingletonScope();
-                  this.kernel.Bind<IHistoryEventTypeService>().To<HistoryEventTypeServiceClass>().InSingletonScope();
+                 // this.kernel.Bind<IFamousPersonTypeService>().To<FamousPersonTypeServiceClass>().InSingletonScope();
+                //  this.kernel.Bind<IHistoryEventService>().To<HistoryEventServiceClass>().InSingletonScope();
+                 // this.kernel.Bind<IHistoryEventTypeService>().To<HistoryEventTypeServiceClass>().InSingletonScope();
                   this.kernel.Bind<IMhUserService>().To<MhUserServiceClass>().InSingletonScope();
-                  this.kernel.Bind<IPersonEventRelationService>().To<PersonEventRelationServiceClass>().InSingletonScope();
+                //  this.kernel.Bind<IPersonEventRelationService>().To<PersonEventRelationServiceClass>().InSingletonScope();
                   this.kernel.Bind<IPictureService>().To<PictureServiceClass>().InSingletonScope();
             }
       }

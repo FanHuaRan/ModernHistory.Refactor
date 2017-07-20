@@ -30,6 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Fhr.ModernHistory.DtoDoConverters">
+      <HintPath>..\Fhr.ModernHistory.DtoDoConverters\bin\Debug\Fhr.ModernHistory.DtoDoConverters.dll</HintPath>
+    </Reference>
+    <Reference Include="Fhr.ModernHistory.Dtos">
+      <HintPath>..\Fhr.ModernHistory.Dtos\bin\Debug\Fhr.ModernHistory.Dtos.dll</HintPath>
+    </Reference>
     <Reference Include="Fhr.ModernHistory.Models">
       <HintPath>..\Fhr.ModernHistory.Models\bin\Debug\Fhr.ModernHistory.Models.dll</HintPath>
     </Reference>
@@ -56,19 +62,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IFamousPersonService.cs" />
-    <Compile Include="IFamousPersonTypeService.cs" />
     <Compile Include="Impl\PictureServiceClass.cs" />
     <Compile Include="IPictureService.cs" />
     <Compile Include="IHistoryEventService.cs" />
-    <Compile Include="IHistoryEventTypeService.cs" />
     <Compile Include="IMhUserService.cs" />
     <Compile Include="Impl\FamousPersonServiceClass.cs" />
-    <Compile Include="Impl\FamousPersonTypeServiceClass.cs" />
-    <Compile Include="Impl\HistoryEventServiceClass.cs" />
-    <Compile Include="Impl\HistoryEventTypeServiceClass.cs" />
     <Compile Include="Impl\MhUserServiceClass.cs" />
-    <Compile Include="Impl\PersonEventRelationServiceClass.cs" />
-    <Compile Include="IPersonEventRelationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

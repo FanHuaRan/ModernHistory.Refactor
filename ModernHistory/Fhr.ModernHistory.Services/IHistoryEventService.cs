@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Fhr.ModernHistory.Models;
-using Fhr.ModernHistory.Models.SearchModels;
+using Fhr.ModernHistory.Dtos;
+using Fhr.ModernHistory.Dtos.SearchModels;
 
 namespace Fhr.ModernHistory.Services
 {
@@ -14,16 +14,16 @@ namespace Fhr.ModernHistory.Services
       /// </summary>
       public interface IHistoryEventService
       {
-            IEnumerable<HistoryEvent> FindAll();
+            IEnumerable<HistoryEventInfo> FindAll();
 
-            HistoryEvent FindById(Object id);
+            HistoryEventInfo FindById(Object id);
 
-            void Update(HistoryEvent HistoryEvent);
+            void Update(HistoryEventInfo HistoryEvent);
 
-            HistoryEvent Save(HistoryEvent historyEvent);
+            HistoryEventInfo Save(HistoryEventInfo historyEvent);
 
             void Delete(object id);
 
-            IEnumerable<HistoryEvent> Search(EventSearchModel searchModel);
+            IEnumerable<HistoryEventInfo> Search(EventSearchModel searchModel);
       }
 }

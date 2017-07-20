@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Fhr.ModernHistory.Dtos;
 using Fhr.ModernHistory.Models;
 using Fhr.ModernHistory.Repositorys;
 
@@ -43,6 +44,11 @@ namespace Fhr.ModernHistory.Services.Impl
                   {
                         return FindPassword(userName);
                   });
+            }
+
+            MhUser IMhUserService.FindByUserName(string userName)
+            {
+                  throw new NotImplementedException();
             }
       }
 }

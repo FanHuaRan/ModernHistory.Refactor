@@ -12,7 +12,6 @@ namespace Fhr.ModernHistory.Models
     /// </summary>
     public class PersonEventRelation
     {
-
         /// <summary>
         /// 名人事件关系编号
         /// </summary>
@@ -20,12 +19,12 @@ namespace Fhr.ModernHistory.Models
         /// <summary>
         /// 名人编号
         /// </summary>
-        [Required(ErrorMessage = "FamousPersonId is required")]
+        [Required(ErrorMessage = "Famous Person Id is required")]
         public Int32 FamousPersonId { get; set; }
         /// <summary>
         /// 历史事件编号
         /// </summary>
-        [Required(ErrorMessage = "HistoryEventId is required")]
+        [Required(ErrorMessage = "History Event Id is required")]
         public Int32 HistoryEventId { get; set; }
 
     }
