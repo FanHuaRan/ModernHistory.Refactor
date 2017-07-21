@@ -20,14 +20,14 @@ namespace Fhr.ModernHistory.Services.Impl
       {
             private IFamousPersonRepository famousPersonRepository = null;
 
-            private IFamousPersonTypeRepository famousTypeRepository = null;
+         //   private IFamousPersonTypeRepository famousTypeRepository = null;
 
             private IPersonTypeRelationRepository personTypeRelationRepository = null;
 
-            public FamousPersonServiceClass(IFamousPersonRepository famousPersonRepository,IFamousPersonTypeRepository famousTypeRepository, IPersonTypeRelationRepository personTypeRelationRepository)
+            public FamousPersonServiceClass(IFamousPersonRepository famousPersonRepository, IPersonTypeRelationRepository personTypeRelationRepository)
             {
                   this.famousPersonRepository = famousPersonRepository;
-                  this.famousTypeRepository = famousTypeRepository;
+                //  this.famousTypeRepository = famousTypeRepository;
                   this.personTypeRelationRepository = personTypeRelationRepository;
             }
 
@@ -51,7 +51,7 @@ namespace Fhr.ModernHistory.Services.Impl
             public FamousPersonInfo FindById(object id)
             {
                   var person=famousPersonRepository.FindById(id);
-                  var typeIds = personTypeRelationRepository.FindByWhereAndSelect(p => p.FamousPersonId == (int)id, p => p.FamousPersonTypeId).ToList();
+                  var typeIds = personTypeRelationRepository.FindByWhereAndSelect(p => p.FamousPersonId == (int)id, p => p.FamousPersonTypeId);
                   return FamousPersonConverter.ConvertToDto(person, (IEnumerable<int>)typeIds);
             }
 

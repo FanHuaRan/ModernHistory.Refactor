@@ -42,8 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FamousPerson.cs" />
-    <Compile Include="HistoryEvent.cs" />
+    <Compile Include="FamousPersonInfo.cs" />
+    <Compile Include="FamousPersonTypeInfo.cs" />
+    <Compile Include="HistoryEventInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SearchModels\EventSearchModel.cs" />
     <Compile Include="SearchModels\PersonSearchModel.cs" />

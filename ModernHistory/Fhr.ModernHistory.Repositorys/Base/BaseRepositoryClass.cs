@@ -102,14 +102,14 @@ namespace Fhr.ModernHistory.Repositorys
                   }
             }
 
-            public virtual IEnumerable<object> FindByWhereAndSelect(Func<T, bool> whereExpression, Func<T, object> selectExpression)
+            public virtual IEnumerable<V> FindByWhereAndSelect<V>(Func<T, bool> whereExpression, Func<T, V> selectExpression)
             {
                   using (var context = new ModernHisContext())
                   {
                         return context.Set<T>()
                                       .Where(whereExpression)
                                       .Select(selectExpression)
-                                      .ToList();
+                                      .ToList<V>();
                   }
             }
 

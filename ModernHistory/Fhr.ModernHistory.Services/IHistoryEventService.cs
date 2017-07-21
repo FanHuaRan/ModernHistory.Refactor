@@ -18,9 +18,9 @@ namespace Fhr.ModernHistory.Services
 
             HistoryEventInfo FindById(Object id);
 
-            void Update(HistoryEventInfo HistoryEvent);
+            void Update(HistoryEventInfo historyEventInfo);
 
-            HistoryEventInfo Save(HistoryEventInfo historyEvent);
+            HistoryEventInfo Save(HistoryEventInfo historyEventInfo);
 
             void Delete(object id);
 

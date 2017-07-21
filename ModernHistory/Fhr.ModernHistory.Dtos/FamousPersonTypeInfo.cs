@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Fhr.ModernHistory.Models
+namespace Fhr.ModernHistory.Dtos
 {
     /// <summary>
     /// 名人类型 
     /// 2017/06/30 fhr
     /// </summary>
-    public class FamousPersonType
+    public class FamousPersonTypeInfo
     {
         /// <summary>
         /// 名人类型编号

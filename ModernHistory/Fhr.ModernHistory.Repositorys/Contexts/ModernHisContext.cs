@@ -33,7 +33,7 @@ namespace Fhr.ModernHistory.Repositorys.Contexts
 
             public DbSet<MhUser> MhUsers { get; set; }
 
-            public DbSet<PersonEventRelation> PersonEventRelation { get; set; }
+            public DbSet<PersonEventRelation> PersonEventRelations { get; set; }
 
             public DbSet<PersonTypeRelation> PersonTypeRelations { get; set; }
 

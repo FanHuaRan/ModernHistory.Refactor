@@ -31,12 +31,12 @@ namespace ModernHistoryWebApi.Controllers
                   this.PictureService = pictureService;
             }
 
-            public IEnumerable<HistoryEvent> Get()
+            public IEnumerable<HistoryEventInfo> Get()
             {
                   return HistoryEventService.FindAll();
             }
 
-            public HistoryEvent Get(int id)
+            public HistoryEventInfo Get(int id)
             {
                   var person = HistoryEventService.FindById(id);
                   if (person == null)
@@ -46,7 +46,7 @@ namespace ModernHistoryWebApi.Controllers
                   return person;
             }
             [HttpPost]
-            public HistoryEvent Save([FromBody]HistoryEvent value)
+            public HistoryEventInfo Save([FromBody]HistoryEventInfo value)
             {
                   if (value != null && ModelState.IsValid)
                   {
@@ -58,7 +58,7 @@ namespace ModernHistoryWebApi.Controllers
                   }
             }
             [HttpPost]
-            public void Update(int id, [FromBody]HistoryEvent value)
+            public void Update(int id, [FromBody]HistoryEventInfo value)
             {
                   if (value != null && ModelState.IsValid)
                   {
@@ -77,7 +77,7 @@ namespace ModernHistoryWebApi.Controllers
                   HistoryEventService.Delete(id);
             }
             [HttpPost]
-            public IEnumerable<HistoryEvent> Search([FromUri] EventSearchModel searchModel)
+            public IEnumerable<HistoryEventInfo> Search([FromUri] EventSearchModel searchModel)
             {
                   return HistoryEventService.Search(searchModel);
             }

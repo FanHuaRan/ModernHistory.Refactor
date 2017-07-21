@@ -18,9 +18,9 @@ namespace Fhr.ModernHistory.Services
 
             FamousPersonInfo FindById(Object id);
 
-            void Update(FamousPersonInfo famousePerson);
+            void Update(FamousPersonInfo famousePersonInfo);
 
-            FamousPersonInfo Save(FamousPersonInfo famousePerson);
+            FamousPersonInfo Save(FamousPersonInfo famousePersonInfo);
 
             void Delete(object id);
 

@@ -23,7 +23,7 @@ namespace Fhr.ModernHistory.Repositorys.Contexts
                 //成都各省市经纬度：http://www.d1xz.net/xp/jingwei/sicuan.aspx
                   var personTypes = new List<FamousPersonType>()
                   {
-                        new FamousPersonType(){FamousPersonTypeName =" 政治家"},
+                        new FamousPersonType(){FamousPersonTypeName ="政治家"},
                         new FamousPersonType(){FamousPersonTypeName = "思想家"},
                         new FamousPersonType(){FamousPersonTypeName = "军事家"},
                         new FamousPersonType(){FamousPersonTypeName = "文学家"},
@@ -66,16 +66,44 @@ namespace Fhr.ModernHistory.Repositorys.Contexts
                         {
                                Detail="xxxx事件",
                                OccurDate=DateTime.Now,
-                                OccurX=45d,
-                                   OccurY=45d,
-                                    Place="XX地方",
-                                     Province="四川",
-                                      Title="事件标题哈",
+                               OccurX=45d,
+                               OccurY=45d,
+                               Place="XX地方",
+                               Province="四川",
+                               Title="事件标题哈",
                         }
+                  };
+                  var personTypeRelaions = new List<PersonTypeRelation>()
+                  {
+                        new PersonTypeRelation(){
+                               FamousPersonId=1,
+                               FamousPersonTypeId=1
+                        },
+                         new PersonTypeRelation(){
+                               FamousPersonId=1,
+                               FamousPersonTypeId=2
+                        },
+                           new PersonTypeRelation(){
+                               FamousPersonId=2,
+                               FamousPersonTypeId=1
+                        },
+                  };
+                  var personEventRelations = new List<PersonEventRelation>()
+                  {
+                        new PersonEventRelation(){
+                               FamousPersonId=1,
+                               HistoryEventId=1
+                        },
+                         new PersonEventRelation(){
+                               FamousPersonId=2,
+                               HistoryEventId=1
+                        },
                   };
                   personTypes.ForEach(p => context.FamousPersonTypes.Add(p));
                   persons.ForEach(p => context.FamousPersons.Add(p));
                   events.ForEach(p => context.HistoryEvents.Add(p));
+                  personTypeRelaions.ForEach(p => context.PersonTypeRelations.Add(p));
+                  personEventRelations.ForEach(p => context.PersonEventRelations.Add(p));
                   context.SaveChanges();
             }
       }

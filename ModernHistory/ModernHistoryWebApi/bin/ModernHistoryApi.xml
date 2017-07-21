@@ -499,6 +499,18 @@
              2017/07/02 fhr
             </summary>
         </member>
+        <member name="T:ModernHistoryWebApi.Controllers.FamousPersonTypeController">
+            <summary>
+            FamousPersonType API控制器
+             2017/07/02 fhr
+            </summary>
+        </member>
+        <member name="T:ModernHistoryWebApi.Controllers.HistoryEventController">
+            <summary>
+            HistoryEvent api控制器
+             2017/07/02 fhr
+            </summary>
+        </member>
         <member name="T:ModernHistoryWebApi.Controllers.ImageController">
             <summary>
             图片下载控制器

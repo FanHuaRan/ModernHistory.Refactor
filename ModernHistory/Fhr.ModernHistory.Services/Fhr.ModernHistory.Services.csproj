@@ -62,6 +62,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IFamousPersonService.cs" />
+    <Compile Include="IFamousPersonTypeService.cs" />
+    <Compile Include="Impl\FamousPersonTypeServiceClass.cs" />
+    <Compile Include="Impl\HistoryEventServiceClass.cs" />
     <Compile Include="Impl\PictureServiceClass.cs" />
     <Compile Include="IPictureService.cs" />
     <Compile Include="IHistoryEventService.cs" />

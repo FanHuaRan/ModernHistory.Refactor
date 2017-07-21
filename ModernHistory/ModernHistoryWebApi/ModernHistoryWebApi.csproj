@@ -253,6 +253,8 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\FamousPersonController.cs" />
+    <Compile Include="Controllers\FamousPersonTypeController.cs" />
+    <Compile Include="Controllers\HistoryEventController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Dependencys\NinjectDependencyResolver.cs" />

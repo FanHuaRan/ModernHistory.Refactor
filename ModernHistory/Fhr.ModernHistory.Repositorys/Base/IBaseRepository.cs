@@ -65,7 +65,7 @@ namespace Fhr.ModernHistory.Repositorys
         /// <param name="whereExpression"></param>
         /// <param name="selectExpression"></param>
         /// <returns></returns>
-        IEnumerable<object> FindByWhereAndSelect(Func<T, bool> whereExpression, Func<T, object> selectExpression);
+        IEnumerable<V>  FindByWhereAndSelect<V>(Func<T, bool> whereExpression, Func<T, V> selectExpression);
         /// <summary>
         /// 选择
         /// </summary>
