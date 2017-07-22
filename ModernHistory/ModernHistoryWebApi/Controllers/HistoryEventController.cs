@@ -77,7 +77,7 @@ namespace ModernHistoryWebApi.Controllers
                   HistoryEventService.Delete(id);
             }
             [HttpPost]
-            public IEnumerable<HistoryEventInfo> Search([FromUri] EventSearchModel searchModel)
+            public IEnumerable<HistoryEventInfo> Search([FromBody] EventSearchModel searchModel)
             {
                   return HistoryEventService.Search(searchModel);
             }

@@ -87,7 +87,7 @@ namespace Fhr.ModernHistory.Services.Impl
             public IEnumerable<HistoryEventInfo> Search(EventSearchModel searchModel)
             {
                   //初始化查询sql语句
-                  var sqlBuilder = new StringBuilder("select * from HistoryEvent where");
+                  var sqlBuilder = new StringBuilder("select * from HistoryEvent  join PersonEventRelation on HistoryEvent.HistoryEventId=PersonEventRelation.HistoryEventId  where ");
                   //初始化查询参数
                   var searchParams = new List<object>();
                   //处理参数
@@ -96,8 +96,8 @@ namespace Fhr.ModernHistory.Services.Impl
                   DealStringQueryParam("Place", searchModel.Place, sqlBuilder, searchParams);
                   if (searchModel.FamousPersonId != null)
                   {
-                        sqlBuilder.Append("HistoryEventTypeId ={0} and ");
-                     //   searchParams.Add(searchModel.HistoryEventTypeId);
+                        sqlBuilder.Append("PersonEventRelation.FamousPersonId ={0} and ");
+                        searchParams.Add(searchModel.FamousPersonId);
                   }
                   if (searchModel.MinOccurDate != null)
                   {

@@ -89,7 +89,7 @@ namespace Fhr.ModernHistory.Services.Impl
             public IEnumerable<FamousPersonInfo> Search(PersonSearchModel searchModel)
             {
                   //初始化查询sql语句
-                  var sqlBuilder = new StringBuilder("select * from famousperson where");
+                  var sqlBuilder = new StringBuilder("select famousperson.* from famousperson  join persontyperelation   on famousperson.famousPersonId=persontyperelation.famouspersonId where ");
                   //初始化查询参数
                   var searchParams = new List<object>();
                   //处理参数
@@ -100,7 +100,7 @@ namespace Fhr.ModernHistory.Services.Impl
                   DealStringQueryParam("DeadPlace", searchModel.DeadPlace, sqlBuilder, searchParams);
                   if (searchModel.FamousPersonTypeId != null)
                   {
-                        sqlBuilder.Append("FamousPersonTypeId ={0} and ");
+                        sqlBuilder.Append("persontyperelation.FamousPersonTypeId ={0} and ");
                         searchParams.Add(searchModel.FamousPersonTypeId);
                   }
                   if (searchModel.MinBornDate != null)
@@ -140,6 +140,7 @@ namespace Fhr.ModernHistory.Services.Impl
                   }
                   return personInfos;
             }
+
             private void DealStringQueryParam(string paramName,string value,StringBuilder builder,List<object> searchParams)
             {
                   if (!String.IsNullOrEmpty(value))
